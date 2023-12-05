@@ -1,0 +1,82 @@
+{
+  "datasetCommonParams": {
+    "dataset_root_dir": "dataset",
+    "mosi": {
+      "aligned": {
+        "featurePath": "MOSI/aligned_50.pkl",
+        "feature_dims": [768, 5, 20],
+        "train_samples": 1284,
+        "num_classes": 3,
+        "language": "en",
+        "KeyEval": "Loss"
+      }
+    },
+    "mosei": {
+      "aligned": {
+        "featurePath": "MOSEI/aligned_50.pkl",
+        "feature_dims": [768, 74, 35],
+        "train_samples": 16326,
+        "num_classes": 3,
+        "language": "en",
+        "KeyEval": "Loss"
+      }
+    }
+  },
+  "imder": {
+    "commonParams": {
+      "need_data_aligned": true,
+      "need_model_aligned": true,
+      "early_stop": 20,
+      "use_bert": true,
+      "use_finetune": true,
+      "attn_mask": true,
+      "update_epochs": 1
+    },
+    "datasetParams": {
+      "mosi": {
+        "attn_dropout_a": 0.2,
+        "attn_dropout_v": 0.0,
+        "relu_dropout": 0.0,
+        "embed_dropout": 0.2,
+        "res_dropout": 0.0,
+        "dst_feature_dim_nheads": [32, 8],
+        "batch_size": 32,
+        "learning_rate": 0.002,
+        "nlevels": 4,
+        "conv1d_kernel_size_l": 3,
+        "conv1d_kernel_size_a": 3,
+        "conv1d_kernel_size_v": 3,
+        "text_dropout": 0.0,
+        "attn_dropout": 0.0,
+        "output_dropout": 0.0,
+        "grad_clip": 1.0,
+        "patience": 24,
+        "weight_decay": 0.005,
+        "transformers": "bert",
+        "pretrained": "bert-base-uncased"
+      },
+      "mosei": {
+        "attn_dropout_a": 0.0,
+        "attn_dropout_v": 0.0,
+        "relu_dropout": 0.0,
+        "embed_dropout": 0.0,
+        "res_dropout": 0.0,
+        "dst_feature_dim_nheads": [32, 8],
+        "batch_size": 128,
+        "learning_rate": 0.002,
+        "nlevels": 6,
+        "conv1d_kernel_size_l": 3,
+        "conv1d_kernel_size_a": 3,
+        "conv1d_kernel_size_v": 3,
+        "text_dropout": 0.0,
+        "attn_dropout": 0.0,
+        "output_dropout": 0.0,
+        "grad_clip": 0.6,
+        "patience": 5,
+        "weight_decay": 0.005,
+        "transformers": "bert",
+        "pretrained": "bert-base-uncased"
+      }
+    }
+  }
+  }
